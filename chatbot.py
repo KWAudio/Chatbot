@@ -41,11 +41,11 @@ while True:
     input_ids = gpt_tokenizer.encode(prompt, return_tensors='pt')
     gen_ids = gpt_model.generate(
         input_ids,
-        max_length=100,
+        max_length=128,
         do_sample=True,
         top_p=0.92,
         temperature=0.8,
-        repetition_penalty=1.5,
+        repetition_penalty=2.0,
         eos_token_id=gpt_tokenizer.eos_token_id,
         pad_token_id=gpt_tokenizer.pad_token_id
     )

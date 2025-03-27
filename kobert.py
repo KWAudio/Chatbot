@@ -1,9 +1,8 @@
-from transformers import BertTokenizer, BertForSequenceClassification
-import torch
+from transformers import AutoModel, AutoTokenizer
 
 # tokenizer & model 로드 (KoBERT or 다른 BERT 기반 모델)
-tokenizer = BertTokenizer.from_pretrained("beomi/KcBERT-base")
-model = BertForSequenceClassification.from_pretrained("beomi/KcBERT-base", num_labels=3)
+model = AutoModel.from_pretrained("monologg/kobert")
+tokenizer = AutoTokenizer.from_pretrained("monologg/kobert", trust_remote_code=True)
 
 # 입력 문장
 text = "오늘 길을 걷다가 넘어졌어"
